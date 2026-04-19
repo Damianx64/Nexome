@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticuloCard from '../../components/articulos/ArticuloCard.astro';
+import FiltrosArticulos from '../../components/articulos/FiltrosArticulos.astro';
+import Paginacion from '../../components/articulos/Paginacion.astro';
+
+const articulos = [
+  { id: 1, titulo: 'Artículo 1', autor: 'Autor 1', fecha: '2026-04-18', categoria: 'Tecnología', imagen: '/placeholder.svg?height=220&width=350' },
+  { id: 2, titulo: 'Artículo 2', autor: 'Autor 2', fecha: '2026-04-17', categoria: 'Cultura', imagen: '/placeholder.svg?height=220&width=350' },
+  { id: 3, titulo: 'Artículo 3', autor: 'Autor 3', fecha: '2026-04-16', categoria: 'Ciencia', imagen: '/placeholder.svg?height=220&width=350' },
+  { id: 4, titulo: 'Artículo 4', autor: 'Autor 4', fecha: '2026-04-15', categoria: 'Arte', imagen: '/placeholder.svg?height=220&width=350' },
+  { id: 5, titulo: 'Artículo 5', autor: 'Autor 5', fecha: '2026-04-14', categoria: 'Tecnología', imagen: '/placeholder.svg?height=220&width=350' },
+  { id: 6, titulo: 'Artículo 6', autor: 'Autor 6', fecha: '2026-04-13', categoria: 'Cultura', imagen: '/placeholder.svg?height=220&width=350' },
+];
+
+const paginaActual = 1;
+const totalPaginas = 3;
+---
+
+<BaseLayout title="Artículos" description="Explora todos los artículos de Nexome">
+  <section aria-label="Artículos">
+    <h1>Artículos</h1>
+    <FiltrosArticulos />
+    <ul>
+      {articulos.map((articulo) => (
+        <li>
+          <ArticuloCard {...articulo} />
+        </li>
+      ))}
+    </ul>
+    <Paginacion paginaActual={paginaActual} totalPaginas={totalPaginas} />
+  </section>
+</BaseLayout>

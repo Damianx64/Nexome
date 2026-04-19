@@ -1,0 +1,32 @@
+---
+const colLeft = [
+  { href: '/', label: 'Inicio' },
+  { href: '/contacto', label: 'Contacto' },
+  { href: '/sobre-nosotros', label: 'Sobre nosotros' },
+  { href: '/nuestra-inspiracion', label: 'Nuestra inspiración' },
+];
+
+const colRight = [
+  { href: '/preguntas-frecuentes', label: 'Preguntas frecuentes' },
+  { href: '/derechos-de-autor', label: 'Derechos de autor' },
+  { href: '/redes-sociales', label: 'Redes sociales' },
+  { href: '/colaborar', label: '¿Quieres colaborar?' },
+];
+---
+
+<footer>
+  <div>
+    <nav aria-label="Navegación del pie de página">
+      <ul>
+        {colLeft.map(({ href, label }) => (
+          <li><a href={href}>{label}</a></li>
+        ))}
+      </ul>
+      <ul>
+        {colRight.map(({ href, label }) => (
+          <li><a href={href}>{label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</footer>

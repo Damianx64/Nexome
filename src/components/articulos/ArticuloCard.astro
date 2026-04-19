@@ -1,0 +1,26 @@
+---
+interface Props {
+  id: number;
+  titulo: string;
+  autor: string;
+  fecha: string;
+  categoria: string;
+  imagen: string;
+}
+
+const { id, titulo, autor, fecha, categoria, imagen } = Astro.props;
+---
+
+<article>
+  <a href={`/articulos/${id}`}>
+    <img src={imagen} alt={titulo} width="350" height="220" />
+    <div>
+      <span>{categoria}</span>
+      <h2>{titulo}</h2>
+      <p>
+        <span>{autor}</span>
+        <time datetime={fecha}>{fecha}</time>
+      </p>
+    </div>
+  </a>
+</article>

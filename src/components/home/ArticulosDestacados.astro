@@ -1,0 +1,52 @@
+---
+const articulos = [
+  {
+    id: 1,
+    titulo: 'Artículo destacado 1',
+    autor: 'Autor 1',
+    fecha: '18 de abril, 2026',
+    categoria: 'Categoría',
+    imagen: '/placeholder.svg?height=200&width=350',
+  },
+  {
+    id: 2,
+    titulo: 'Artículo destacado 2',
+    autor: 'Autor 2',
+    fecha: '17 de abril, 2026',
+    categoria: 'Categoría',
+    imagen: '/placeholder.svg?height=200&width=350',
+  },
+  {
+    id: 3,
+    titulo: 'Artículo destacado 3',
+    autor: 'Autor 3',
+    fecha: '16 de abril, 2026',
+    categoria: 'Categoría',
+    imagen: '/placeholder.svg?height=200&width=350',
+  },
+];
+---
+
+<section aria-label="Artículos destacados">
+  <h2>Artículos destacados</h2>
+  <ul>
+    {articulos.map((articulo) => (
+      <li>
+        <article>
+          <a href={`/articulos/${articulo.id}`}>
+            <img src={articulo.imagen} alt={articulo.titulo} width="350" height="200" />
+            <div>
+              <span>{articulo.categoria}</span>
+              <h3>{articulo.titulo}</h3>
+              <p>
+                <span>{articulo.autor}</span>
+                <time datetime={articulo.fecha}>{articulo.fecha}</time>
+              </p>
+            </div>
+          </a>
+        </article>
+      </li>
+    ))}
+  </ul>
+  <a href="/articulos">Ver todos los artículos</a>
+</section>

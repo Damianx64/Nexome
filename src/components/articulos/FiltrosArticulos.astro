@@ -1,0 +1,18 @@
+---
+const categorias = ['Todas', 'Tecnología', 'Cultura', 'Ciencia', 'Arte'];
+---
+
+<div>
+  <label for="filtro-fecha">Fecha</label>
+  <select id="filtro-fecha" name="fecha">
+    <option value="">Más recientes</option>
+    <option value="asc">Más antiguos</option>
+  </select>
+
+  <label for="filtro-categoria">Categoría</label>
+  <select id="filtro-categoria" name="categoria">
+    {categorias.map((cat) => (
+      <option value={cat.toLowerCase()}>{cat}</option>
+    ))}
+  </select>
+</div>
