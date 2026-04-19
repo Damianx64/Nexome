@@ -1,0 +1,22 @@
+---
+const portadas = [
+  { id: 1, titulo: 'Portada 1', imagen: '/placeholder.svg?height=300&width=220' },
+  { id: 2, titulo: 'Portada 2', imagen: '/placeholder.svg?height=300&width=220' },
+  { id: 3, titulo: 'Portada 3', imagen: '/placeholder.svg?height=300&width=220' },
+];
+---
+
+<section aria-label="Portadas destacadas">
+  <h2>Portadas</h2>
+  <ul>
+    {portadas.map((portada) => (
+      <li>
+        <a href="/portadas">
+          <img src={portada.imagen} alt={portada.titulo} width="220" height="300" />
+          <span>{portada.titulo}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+  <a href="/portadas">Ver todas las portadas</a>
+</section>

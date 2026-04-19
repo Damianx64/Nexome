@@ -1,0 +1,26 @@
+---
+const navLinks = [
+  { href: '/', label: 'Inicio' },
+  { href: '/articulos', label: 'Artículos' },
+  { href: '/portadas', label: 'Portadas' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header>
+  <nav aria-label="Navegación principal">
+    <a href="/" aria-label="Nexome - Inicio">
+      <span>Nexome</span>
+    </a>
+    <ul>
+      {navLinks.map(({ href, label }) => (
+        <li>
+          <a href={href} aria-current={currentPath === href ? 'page' : undefined}>
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>

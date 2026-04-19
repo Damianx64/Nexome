@@ -1,0 +1,39 @@
+---
+interface Props {
+  paginaActual: number;
+  totalPaginas: number;
+}
+
+const { paginaActual, totalPaginas } = Astro.props;
+const paginas = Array.from({ length: totalPaginas }, (_, i) => i + 1);
+---
+
+<nav aria-label="Paginación">
+  <ul>
+    {paginaActual > 1 && (
+      <li>
+        <a href={`/articulos?pagina=${paginaActual - 1}`} aria-label="Página anterior">
+          Anterior
+        </a>
+      </li>
+    )}
+    {paginas.map((num) => (
+      <li>
+        <a
+          href={`/articulos?pagina=${num}`}
+          aria-label={`Página ${num}`}
+          aria-current={num === paginaActual ? 'page' : undefined}
+        >
+          {num}
+        </a>
+      </li>
+    ))}
+    {paginaActual < totalPaginas && (
+      <li>
+        <a href={`/articulos?pagina=${paginaActual + 1}`} aria-label="Página siguiente">
+          Siguiente
+        </a>
+      </li>
+    )}
+  </ul>
+</nav>
