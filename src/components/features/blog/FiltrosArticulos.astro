@@ -2,17 +2,38 @@
 const categorias = ['Todas', 'Tecnología', 'Cultura', 'Ciencia', 'Arte'];
 ---
 
-<div>
-  <label for="filtro-fecha">Fecha</label>
-  <select id="filtro-fecha" name="fecha">
-    <option value="">Más recientes</option>
-    <option value="asc">Más antiguos</option>
-  </select>
+<div class="content-card rounded-[2rem] p-5 sm:p-6">
+  <div class="grid gap-5 md:grid-cols-2">
+    <div class="space-y-3">
+      <label for="filtro-fecha" class="block text-sm font-semibold uppercase tracking-[0.26em] text-cyan-50/60">
+        Fecha
+      </label>
+      <select
+        id="filtro-fecha"
+        name="fecha"
+        class="w-full rounded-[1.2rem] border border-white/15 bg-slate-950/25 px-4 py-3 text-base tracking-[0.08em] text-cyan-50 outline-none transition focus:border-cyan-100/42"
+      >
+        <option value="">Más recientes</option>
+        <option value="asc">Más antiguos</option>
+      </select>
+    </div>
 
-  <label for="filtro-categoria">Categoría</label>
-  <select id="filtro-categoria" name="categoria">
-    {categorias.map((cat) => (
-      <option value={cat.toLowerCase()}>{cat}</option>
-    ))}
-  </select>
+    <div class="space-y-3">
+      <label
+        for="filtro-categoria"
+        class="block text-sm font-semibold uppercase tracking-[0.26em] text-cyan-50/60"
+      >
+        Categoría
+      </label>
+      <select
+        id="filtro-categoria"
+        name="categoria"
+        class="w-full rounded-[1.2rem] border border-white/15 bg-slate-950/25 px-4 py-3 text-base tracking-[0.08em] text-cyan-50 outline-none transition focus:border-cyan-100/42"
+      >
+        {categorias.map((cat) => (
+          <option value={cat.toLowerCase()}>{cat}</option>
+        ))}
+      </select>
+    </div>
+  </div>
 </div>

@@ -18,12 +18,23 @@ const totalPaginas = 3;
 ---
 
 <BaseLayout title="Artículos" description="Explora todos los artículos de Nexome">
-  <section aria-label="Artículos">
-    <h1>Artículos</h1>
+  <section aria-label="Artículos" class="section-shell pt-32 lg:pt-40">
+    <div class="mb-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <span class="section-kicker">Archivo editorial</span>
+        <h1 class="section-title mt-5">Artículos</h1>
+        <p class="section-copy mt-4">
+          Una colección presentada con una estructura más sólida y una lectura más elegante para la
+          revista digital.
+        </p>
+      </div>
+      <a href="/" class="editorial-button ghost">Volver al inicio</a>
+    </div>
+
     <FiltrosArticulos />
-    <ul>
+    <ul class="mt-8 grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
       {articulos.map((articulo) => (
-        <li>
+        <li class="h-full">
           <ArticuloCard {...articulo} />
         </li>
       ))}

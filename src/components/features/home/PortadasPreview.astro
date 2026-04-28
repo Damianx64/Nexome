@@ -1,22 +1,53 @@
 ---
 const portadas = [
-  { id: 1, titulo: 'Portada 1', imagen: '/placeholder.svg?height=300&width=220' },
-  { id: 2, titulo: 'Portada 2', imagen: '/placeholder.svg?height=300&width=220' },
-  { id: 3, titulo: 'Portada 3', imagen: '/placeholder.svg?height=300&width=220' },
+  { id: 1, titulo: 'Edición Nebula', imagen: '/placeholder.svg?height=300&width=220' },
+  { id: 2, titulo: 'Glass Pop Issue', imagen: '/placeholder.svg?height=300&width=220' },
+  { id: 3, titulo: 'Future Memory', imagen: '/placeholder.svg?height=300&width=220' },
 ];
 ---
 
-<section aria-label="Portadas destacadas">
-  <h2>Portadas</h2>
-  <ul>
+<section aria-label="Portadas destacadas" class="section-shell pt-8">
+  <div class="content-card rounded-[2.4rem] px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+    <div class="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <span class="section-kicker">Portadas seleccionadas</span>
+        <h2 class="section-title mt-5">Cubiertas con brillo, atmósfera y presencia.</h2>
+      </div>
+      <p class="section-copy max-w-xl">
+        El preview de portadas funciona como vitrina principal: más limpio, más sólido y con mejor
+        ritmo visual para una revista digital.
+      </p>
+    </div>
+
+    <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
     {portadas.map((portada) => (
       <li>
-        <a href="/portadas">
-          <img src={portada.imagen} alt={portada.titulo} width="220" height="300" />
-          <span>{portada.titulo}</span>
+        <a
+          href="/portadas"
+          class="group relative block overflow-hidden rounded-[1.9rem] border border-white/12 bg-white/6 p-3 transition duration-300 hover:-translate-y-1 hover:border-cyan-100/28"
+        >
+          <div class="overflow-hidden rounded-[1.45rem]">
+            <img
+              src={portada.imagen}
+              alt={portada.titulo}
+              width="220"
+              height="300"
+              class="h-[21rem] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+            />
+          </div>
+          <div class="mt-4 flex items-center justify-between gap-4 px-2 pb-2">
+            <span class="text-xl text-white">{portada.titulo}</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.34em] text-cyan-50/56">
+              Preview
+            </span>
+          </div>
         </a>
       </li>
     ))}
-  </ul>
-  <a href="/portadas">Ver todas las portadas</a>
+    </ul>
+
+    <div class="mt-8">
+      <a href="/portadas" class="editorial-button">Ver todas las portadas</a>
+    </div>
+  </div>
 </section>

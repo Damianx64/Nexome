@@ -11,14 +11,21 @@ interface Props {
 const { id, titulo, autor, fecha, categoria, imagen } = Astro.props;
 ---
 
-<article>
-  <a href={`/articulos/${id}`}>
-    <img src={imagen} alt={titulo} width="350" height="220" />
-    <div>
-      <span>{categoria}</span>
-      <h2>{titulo}</h2>
-      <p>
-        <span>{autor}</span>
+<article class="content-card h-full rounded-[2rem]">
+  <a href={`/articulos/${id}`} class="flex h-full flex-col">
+    <div class="relative overflow-hidden rounded-t-[2rem]">
+      <img src={imagen} alt={titulo} width="350" height="220" class="h-60 w-full object-cover" />
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,transparent_20%,rgba(4,15,24,0.8)_100%)]"></div>
+      <span class="info-chip absolute left-5 top-5">{categoria}</span>
+    </div>
+    <div class="flex flex-1 flex-col p-6">
+      <h2 class="text-[1.85rem] leading-tight text-white">{titulo}</h2>
+      <p class="mt-4 body-copy text-base leading-7 text-cyan-50/68">
+        Artículos presentados con jerarquía visual editorial, contraste cómodo y una atmósfera
+        tecnológica más refinada.
+      </p>
+      <p class="mt-auto flex items-center justify-between gap-4 pt-6 text-sm tracking-[0.14em] text-cyan-50/60">
+        <span class="uppercase">{autor}</span>
         <time datetime={fecha}>{fecha}</time>
       </p>
     </div>

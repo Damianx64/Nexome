@@ -10,10 +10,20 @@ const portadas = [
 ---
 
 <BaseLayout title="Portadas" description="Galería creativa de portadas diseñadas por Nexome">
-  <section aria-label="Galería de portadas">
-    <h1>Portadas</h1>
-    <p>Galería creativa de portadas diseñadas por nosotros mismos.</p>
-    <ul>
+  <section aria-label="Galería de portadas" class="section-shell pt-32 lg:pt-40">
+    <div class="mb-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <span class="section-kicker">Galería visual</span>
+        <h1 class="section-title mt-5">Portadas</h1>
+        <p class="section-copy mt-4">
+          Una vitrina visual para mostrar cubiertas con presencia, brillo controlado y estética de
+          revista digital contemporánea.
+        </p>
+      </div>
+      <a href="/" class="editorial-button ghost">Ver portada principal</a>
+    </div>
+
+    <ul class="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
       {portadas.map((portada) => (
         <li>
           <PortadaItem {...portada} />

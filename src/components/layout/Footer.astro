@@ -15,18 +15,51 @@ const colRight = [
 ---
 
 <footer>
-  <div>
-    <nav aria-label="Navegación del pie de página">
-      <ul>
-        {colLeft.map(({ href, label }) => (
-          <li><a href={href}>{label}</a></li>
-        ))}
-      </ul>
-      <ul>
-        {colRight.map(({ href, label }) => (
-          <li><a href={href}>{label}</a></li>
-        ))}
-      </ul>
-    </nav>
+  <div class="page-shell pb-10 pt-6">
+    <div class="content-card rounded-[2.4rem] px-6 py-8 sm:px-8 lg:px-10">
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,18rem)_1fr] lg:items-start">
+        <div>
+          <span class="section-kicker">Nexome</span>
+          <p class="mt-5 text-3xl leading-tight text-white">
+            Revista digital con enfoque visual Y2K y Fritiger Aero.
+          </p>
+          <p class="mt-4 body-copy max-w-md text-base leading-7 text-cyan-50/68">
+            Una experiencia editorial más nítida, ligera y profesional para presentar artículos,
+            portadas e identidad visual en un solo ecosistema.
+          </p>
+        </div>
+
+        <nav aria-label="Navegación del pie de página" class="grid gap-8 sm:grid-cols-2">
+          <ul class="space-y-3">
+            {colLeft.map(({ href, label }) => (
+              <li>
+                <a
+                  href={href}
+                  class="text-base font-semibold uppercase tracking-[0.18em] text-cyan-50/76 transition hover:text-white"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <ul class="space-y-3">
+            {colRight.map(({ href, label }) => (
+              <li>
+                <a
+                  href={href}
+                  class="text-base font-semibold uppercase tracking-[0.18em] text-cyan-50/76 transition hover:text-white"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+      <div class="mt-8 border-t border-white/10 pt-5 text-sm tracking-[0.18em] text-cyan-50/46">
+        Archivo visual, artículos y portadas con identidad editorial.
+      </div>
+    </div>
   </div>
 </footer>

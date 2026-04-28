@@ -8,7 +8,20 @@ interface Props {
 const { id, titulo, imagen } = Astro.props;
 ---
 
-<figure>
-  <img src={imagen} alt={titulo} width="220" height="300" />
-  <figcaption>{titulo}</figcaption>
+<figure class="content-card group rounded-[2rem] p-3 transition duration-300 hover:-translate-y-1">
+  <a href={`/portadas/${id}`} class="block">
+    <div class="overflow-hidden rounded-[1.5rem]">
+      <img
+        src={imagen}
+        alt={titulo}
+        width="220"
+        height="300"
+        class="h-[22rem] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+      />
+    </div>
+    <figcaption class="flex items-center justify-between gap-4 px-2 pb-2 pt-4">
+      <span class="text-xl text-white">{titulo}</span>
+      <span class="text-xs font-semibold uppercase tracking-[0.34em] text-cyan-50/56">Cover</span>
+    </figcaption>
+  </a>
 </figure>
